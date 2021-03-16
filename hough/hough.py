@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 
 def hough(edges, minLineLength, maxLineGap, threshod):
+    # 霍夫变换 opencv
     lines1 = cv2.HoughLines(edges, 1, np.pi / 180.0, int(threshod), int(minLineLength), int(maxLineGap))
     s = 0
     # num = 0
@@ -16,7 +17,7 @@ def hough(edges, minLineLength, maxLineGap, threshod):
             #     j = j + 1
             s_theta = s_theta + theta
         s_theta = s_theta / i
-        s = np.rad2deg(s_theta)
+        s = np.rad2deg(s_theta) # 弧度转角度
         # num = j
         #print(s)
     return s

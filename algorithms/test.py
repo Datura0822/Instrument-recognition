@@ -11,6 +11,7 @@ base_dir = '../data/test/'
 param = read_write.my_open(base_dir + 'input.txt')
 value = read_write.my_open(base_dir + 'output.txt')
 
+# 测试函数
 data = []
 error = []
 cnt = 0

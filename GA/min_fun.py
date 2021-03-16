@@ -5,7 +5,7 @@ from hough import hough
 from operators import read_write
 
 def min_fun(param):
-
+    # 适应度函数
     file = os.listdir('../data/train/image_out')
     file.sort()
     base_dir = '../data/train/'
@@ -16,8 +16,10 @@ def min_fun(param):
     for img in file:
         src = np.load(base_dir + 'image_out/' + img)
         src = src[:, :280]
+        # kx+b
         current_value = hough.hough(src, param[0], param[1], param[2]) * 10 / 27 + param[3]
         cnt = int(img[0])
+        # f1+f2+f3 适应度最小
         minf.append(abs(data[cnt] - current_value))
         # print (cnt, data[cnt])
         # cnt = cnt + 1

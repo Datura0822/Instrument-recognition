@@ -20,6 +20,7 @@ new_dir = '../data/train/image_out/'
 size_m = 500
 size_n = 500
 
+# 图像预处理
 for img in file:
     # image = Image.open(base_dir + img)
     # image_size = image.resize((size_m, size_n), Image.ANTIALIAS)

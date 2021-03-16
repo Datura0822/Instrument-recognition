@@ -50,7 +50,7 @@ class Individual:
             Pop = []
             for i in range(Config.get_population_num()):
                 dec = np.random.rand(Config.get_dec_num()) * (upper - lower) + lower
-                Pop.append(Individual(dec))
+                Pop.append(Individual(dec)) # np.append()
         if Config.get_encoding() == "binary":
             Pop = []
             for i in range(Config.get_population_num()):

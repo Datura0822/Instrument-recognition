@@ -5,7 +5,7 @@ import Config
 import numpy as np
 import matplotlib.pyplot as plt
 
-
+# 遗传算法 / 训练过程
 def draw_pareto(Pop, name):
     dec_array = []
     for p in Pop:
@@ -31,9 +31,9 @@ param = []
 for i in range(Config.get_evaluation()):
     # 交叉操作，生成子代
     offspring = crossover.cross(Pop)
-
+    # 将父代和子代的适应度一起排序，选择适应度小的pop—num个个体作为子代
     Pop = Pop + offspring
-    # 非支配排序，获得子代
+    # 非支配排序，获得子代，这边的选择方法可以不看
     P_set = dominated.non_dominated_sort(Pop)
 
     select = []
